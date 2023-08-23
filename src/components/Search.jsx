@@ -17,7 +17,7 @@ function SearchFood(props) {
 
     return (
         <Divider>
-            <input value={searchInput} onChange={(event) => submitSearch(event)}/>
+            <input placeholder="Search your favourite food" value={searchInput} onChange={(event) => submitSearch(event)}/>
         </Divider>
     )
 }

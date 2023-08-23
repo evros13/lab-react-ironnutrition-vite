@@ -19,12 +19,14 @@ function FoodList() {
     setFoods(removedFoodArray)
   }
 
+
   function addFood(foodToAdd) {
     const addedFoodArray = [foodToAdd, ...foods]
 
     setFoods(addedFoodArray)
   }
 
+  
   function searchForFood(str) {
 
     let searchedFoods;
