@@ -1,4 +1,4 @@
-import AddFoodForm from "./AddFoodForm"
+import { Card, Col, Button, Row } from "antd";
 
 function FoodBox (props) {
 
@@ -6,15 +6,15 @@ function FoodBox (props) {
 
 
     return (
-    <div>
-        <h2>Food items</h2>
-        <p><b>{name}</b></p>
-        <img src={image} />
-        <p>Calories: {calories}</p>
+    <Col className="foodList">
+        <Card name={name} style={{ width: 230, height: 300, margin: 10 }}>
+        <img src={image} height={60} alt="food" />
+        <p>Calories {calories}</p>
         <p>Servings {servings}</p>
-        <p><b>Total Calories: {servings} * {calories} </b> kcal</p>
-        <button className="removeFood" onClick={() => props.removeFood(id)}>Delete</button>
-    </div>
+        <p><b>Total Calories: {calories} * {servings}</b> kcal</p>
+        <Button type="primary" onClick={() => props.removeFood(id)}> Delete </Button>
+        </Card>
+    </Col>
     )
 }
 

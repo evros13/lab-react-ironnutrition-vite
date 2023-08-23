@@ -1,3 +1,4 @@
+import { Divider, Input, Button } from "antd";
 import { useState } from "react";
 
 function AddFoodForm(props) {
@@ -33,40 +34,47 @@ function AddFoodForm(props) {
 
     return (
 
-        <div className="addFood">
-            <h2>Add a new food item</h2>
-            <form action="">
-                <label>Name</label>
-                <input
-                    type="text"
-                    name="name"
-                    onChange={(event) => setName(event.target.value)}
-                    value={name}
-                />
-                <label>Image</label>
-                <input
-                    type="text"
-                    name="image"
-                    onChange={(event) => setImage(event.target.value)}
-                    value={image}
-                />
-                <label>Calories</label>
-                <input
-                    type="number"
-                    name="calories"
-                    onChange={(event) => setCalories(event.target.value)}
-                    value={calories}
-                />
-                <label>Servings</label>
-                <input
-                    type="number"
-                    name="servings"
-                    onChange={(event) => setServings(event.target.value)}
-                    checked={servings}
-                />
-                <button onClick={(event) => submitForm(event)} type="submit">Create</button>
-            </form>
-        </div>
+        <form className="form">
+            <Divider>Add a new food item</Divider>
+
+            <label>Name</label>
+            <Input
+                type="text"
+                name="name"
+                onChange={(event) => setName(event.target.value)}
+                value={name}
+            />
+
+            <label>Image</label>
+            <Input
+                type="text"
+                name="image"
+                onChange={(event) => setImage(event.target.value)}
+                value={image}
+            />
+
+            <label>Calories</label>
+            <Input
+                type="number"
+                name="calories"
+                onChange={(event) => setCalories(event.target.value)}
+                value={calories}
+            />
+
+            <label>Servings</label>
+            <Input
+                type="number"
+                name="servings"
+                onChange={(event) => setServings(event.target.value)}
+                checked={servings}
+            />
+           
+            <Button onClick={(event) => submitForm(event)} type="primary submit">Create</Button>
+        </form>
+
+
+
+
     )
 }
 
